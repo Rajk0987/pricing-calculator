@@ -1,0 +1,67 @@
+import Link from "next/link"
+import { Calculator } from "@/components/calculator"
+
+export default function Home() {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <header className="sticky top-0 z-50 w-full border-b bg-gradient-to-r from-primary/90 to-secondary/90 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 items-center">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
+            <span className="text-white text-xl">LinkedPrice</span>
+          </Link>
+          <nav className="ml-auto flex gap-4">
+            <Link href="#" className="text-sm font-medium text-white/80 hover:text-white">
+              About
+            </Link>
+            <Link href="#" className="text-sm font-medium text-white/80 hover:text-white">
+              Resources
+            </Link>
+          </nav>
+        </div>
+      </header>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-accent/30 to-secondary/30">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="space-y-4">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">
+                  Know Your Worth on LinkedIn
+                </h1>
+                <p className="text-muted-foreground md:text-xl">
+                  Our calculator helps LinkedIn influencers and content creators determine fair pricing for sponsored
+                  posts based on audience size, engagement, and industry benchmarks.
+                </p>
+              </div>
+              <div className="mx-auto w-full max-w-md">
+                <img
+                  src="/placeholder.svg?height=400&width=400"
+                  alt="LinkedIn Influencer Marketing"
+                  className="rounded-lg object-cover w-full border-4 border-primary/20"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="mx-auto grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Calculate Your LinkedIn Post Value
+                </h2>
+                <p className="mt-4 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Enter your LinkedIn metrics to get a customized pricing recommendation for your sponsored content. Our
+                  calculator uses industry data and benchmarks to provide accurate estimates.
+                </p>
+              </div>
+              <div className="w-full max-w-md mx-auto lg:mx-0">
+                <Calculator />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
+
